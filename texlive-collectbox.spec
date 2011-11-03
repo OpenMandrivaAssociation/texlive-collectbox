@@ -1,3 +1,9 @@
+# revision 23848
+# category Package
+# catalog-ctan /macros/latex/contrib/collectbox
+# catalog-date 2011-09-05 11:02:41 +0200
+# catalog-license lppl1.3
+# catalog-version 0.4
 Name:		texlive-collectbox
 Version:	0.4
 Release:	1
@@ -51,6 +57,7 @@ The macros were designed for use within other macros.
 #- source
 %doc %{_texmfdistdir}/source/latex/collectbox/collectbox.dtx
 %doc %{_texmfdistdir}/source/latex/collectbox/collectbox.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -61,3 +68,5 @@ The macros were designed for use within other macros.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
