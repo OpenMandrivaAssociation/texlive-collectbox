@@ -6,7 +6,7 @@
 # catalog-version 0.4
 Name:		texlive-collectbox
 Version:	0.4
-Release:	1
+Release:	2
 Summary:	Collect and process macro arguments as boxes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/collectbox
