@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-collectbox
 Version:	20120807
-Release:	2
+Release:	3
 Summary:	TeXLive collectbox package
 Group:		Publishing
 URL:		http://tug.org/texlive
