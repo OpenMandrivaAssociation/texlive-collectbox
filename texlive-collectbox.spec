@@ -1,19 +1,13 @@
-# revision 26557
-# category Package
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-collectbox
-Version:	0.4b
-Release:	2
+Version:	64967
+Release:	1
 Summary:	TeXLive collectbox package
 Group:		Publishing
 URL:		http://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/collectbox.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/collectbox.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/collectbox.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/collectbox.r64967.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/collectbox.doc.r64967.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/collectbox.source.r64967.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -23,47 +17,27 @@ Requires(post):	texlive-kpathsea
 TeXLive collectbox package.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/collectbox/collectbox.sty
-%doc %{_texmfdistdir}/doc/latex/collectbox/README
-%doc %{_texmfdistdir}/doc/latex/collectbox/collectbox.pdf
+%{_texmfdistdir}/tex/latex/collectbox
+%doc %{_texmfdistdir}/doc/latex/collectbox
 #- source
-%doc %{_texmfdistdir}/source/latex/collectbox/collectbox.dtx
-%doc %{_texmfdistdir}/source/latex/collectbox/collectbox.ins
+%doc %{_texmfdistdir}/source/latex/collectbox
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Aug 07 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120807-1
-+ Revision: 812143
-- Update to latest release.
-
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.4-2
-+ Revision: 750335
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.4-1
-+ Revision: 718093
-- texlive-collectbox
-- texlive-collectbox
-- texlive-collectbox
-- texlive-collectbox
-- texlive-collectbox
-
