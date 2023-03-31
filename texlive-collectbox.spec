@@ -1,6 +1,6 @@
 Name:		texlive-collectbox
 Version:	64967
-Release:	1
+Release:	2
 Summary:	TeXLive collectbox package
 Group:		Publishing
 URL:		http://tug.org/texlive
